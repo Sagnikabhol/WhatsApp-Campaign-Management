@@ -28,8 +28,16 @@ DATABASE_URL = os.getenv("DATABASE_URL", DEFAULT_DB_URL)
 APP_ENV = os.getenv("APP_ENV", "development")
 APP_SECRET_KEY = os.getenv("APP_SECRET_KEY", "campaign-hub-secret-key-change-in-prod")
 
-# WhatsApp Cloud API Credentials
+# WhatsApp Cloud API Credentials & Configuration
 WHATSAPP_API_TOKEN = os.getenv("WHATSAPP_API_TOKEN", "")
 WHATSAPP_PHONE_NUMBER_ID = os.getenv("WHATSAPP_PHONE_NUMBER_ID", "")
 WHATSAPP_BUSINESS_ACCOUNT_ID = os.getenv("WHATSAPP_BUSINESS_ACCOUNT_ID", "")
 WEBHOOK_VERIFY_TOKEN = os.getenv("WEBHOOK_VERIFY_TOKEN", "")
+
+# WhatsApp Cloud API Operational Settings
+WHATSAPP_API_VERSION = os.getenv("WHATSAPP_API_VERSION", "v21.0")
+WHATSAPP_API_BASE_URL = os.getenv("WHATSAPP_API_BASE_URL", "https://graph.facebook.com")
+WHATSAPP_MODE = os.getenv("WHATSAPP_MODE", "test").lower().strip()  # "test" (default) or "production"
+WHATSAPP_API_TIMEOUT = int(os.getenv("WHATSAPP_API_TIMEOUT", "15"))
+WHATSAPP_MAX_RETRIES = int(os.getenv("WHATSAPP_MAX_RETRIES", "3"))
+WHATSAPP_RATE_LIMIT_RPS = float(os.getenv("WHATSAPP_RATE_LIMIT_RPS", "20.0"))
