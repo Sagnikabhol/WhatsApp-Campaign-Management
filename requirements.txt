@@ -1,0 +1,8 @@
+streamlit
+pandas
+python-dotenv
+requests
+apscheduler
+flask
+sqlalchemy
+pytest
